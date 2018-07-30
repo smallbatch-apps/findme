@@ -1,0 +1,145 @@
+@import "variables";
+@import "colours";
+@import "test";
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
+
+footer {
+  position: absolute;
+  //bottom: 0;
+  background-color: $grey-darkest;
+  color: $grey;
+  width: 100%;
+  display: block;
+  padding-top: 50px;
+
+  .navbar {
+    margin-top: 50px;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
+}
+
+.nav-item {
+  padding: 5px 15px;
+}
+
+.main-content {
+  padding-top: 50px;
+}
+
+
+.filter-box {
+  .card {
+    border-radius: 0;
+
+    .card-header {
+      border-color: white;
+      color: $grey-darker;
+
+      font-size: 14px;
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .list-group-item {
+      border-color: white;
+      padding-bottom: 0;
+      font-size: 80%;
+      color: $grey-dark;
+      cursor: pointer;
+
+      &.active {
+        background-color: transparent;
+        color: $grey-darkest;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  background-color: transparent;
+}
+
+.jobs-box {
+  h3 {
+    margin-left: 20px;
+  }
+
+  p.no-jobs {
+    margin-left: 20px;
+  }
+  .card {
+    border-color: white;
+  }
+}
+
+.icon-box {
+ background-color: $blue;
+ padding: 5px 15px;
+ color: white;
+ border-radius: $border-radius;
+ margin-right: 15px;
+ float: left;
+ font-size: 30px;
+}
+
+.title {
+  font-size: 25px;
+  color: $grey-darker;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+}
+
+.full-width-image {
+  background-image: url(../images/agreement-blur-brainstorming-401682.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.login-box {
+  background-color: $blue;
+  font-size: 12px;
+  color: $blue-lightest;
+  padding: 4px 15px;
+  border-radius: $border-radius;
+  padding-right: 4px;
+  margin-left: 20px;
+
+  a {
+    color: $blue-lightest;
+    text-decoration: none;
+    position: relative;
+    top: 1px;
+
+    span {
+      display: inline-block;
+    }
+
+  }
+
+  .btn {
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-left: 15px;
+  }
+
+  i {
+    position: relative;
+    top: 1px;
+    // font-size: 12px;
+  }
+}
+
+.subtitle {
+  font-size: 14px;
+  color: $grey-dark;
+  font-family: 'Lato', sans-serif;
+  font-weight : 100;
+}

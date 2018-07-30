@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+.test {
+  background-color: blue; }
+
+footer {
+  position: absolute;
+  background-color: #3d4852;
+  color: #b8c2cc;
+  width: 100%;
+  display: block;
+  padding-top: 50px; }
+  footer .navbar {
+    margin-top: 50px; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif; }
+
+.nav-item {
+  padding: 5px 15px; }
+
+.main-content {
+  padding-top: 50px; }
+
+.filter-box .card {
+  border-radius: 0; }
+  .filter-box .card .card-header {
+    border-color: white;
+    color: #606f7b;
+    font-size: 14px; }
+    .filter-box .card .card-header i {
+      margin-right: 5px; }
+  .filter-box .card .list-group-item {
+    border-color: white;
+    padding-bottom: 0;
+    font-size: 80%;
+    color: #8795a1;
+    cursor: pointer; }
+    .filter-box .card .list-group-item.active {
+      background-color: transparent;
+      color: #3d4852; }
+
+.breadcrumb {
+  background-color: transparent; }
+
+.jobs-box h3 {
+  margin-left: 20px; }
+
+.jobs-box p.no-jobs {
+  margin-left: 20px; }
+
+.jobs-box .card {
+  border-color: white; }
+
+.icon-box {
+  background-color: #3490dc;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 3px;
+  margin-right: 15px;
+  float: left;
+  font-size: 30px; }
+
+.title {
+  font-size: 25px;
+  color: #606f7b;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif; }
+
+.full-width-image {
+  background-image: url(../images/agreement-blur-brainstorming-401682.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px; }
+
+.login-box {
+  background-color: #3490dc;
+  font-size: 12px;
+  color: #eff8ff;
+  padding: 4px 15px;
+  border-radius: 3px;
+  padding-right: 4px;
+  margin-left: 20px; }
+  .login-box a {
+    color: #eff8ff;
+    text-decoration: none;
+    position: relative;
+    top: 1px; }
+    .login-box a span {
+      display: inline-block; }
+  .login-box .btn {
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-left: 15px; }
+  .login-box i {
+    position: relative;
+    top: 1px; }
+
+.subtitle {
+  font-size: 14px;
+  color: #8795a1;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100; }
