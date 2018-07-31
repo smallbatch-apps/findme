@@ -59,9 +59,7 @@ class Jobs extends Component {
   async componentDidMount() {
     let contract = await new ContractService();
     this.contract = await contract.init();
-
     let jobs = await this.contract.getJobs();
-    console.log(jobs);
     this.setState({jobs});
   }
 
@@ -86,10 +84,13 @@ class Jobs extends Component {
 
       <div className="container main-content">
 
+        
+        <div className="row mb-2">
+        <div class="col">
         <h2>Available Roles For You</h2>
-
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quia vitae ex optio voluptatum nisi facilis nulla, eveniet, repellat saepe accusamus suscipit laudantium temporibus fugit explicabo unde accusantium magni in!</p>
-
+        </div>
+        </div>
         <div className="row">
 
           <div className="w-25 filter-box">

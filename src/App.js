@@ -11,6 +11,8 @@ import Jobs from './components/Jobs';
 import Job from './components/Job';
 import AddJob from './components/AddJob';
 
+import logo from './images/color_logo_transparent.svg'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
@@ -36,9 +38,7 @@ class App extends Component {
           <nav className="navbar navbar-expand-lg navbar-light">
           <Container>
             <NavbarBrand>
-              <div className="icon-box"><i className="fas fa-expand"></i></div>
-              <div className="title">FindMe</div>
-              <div className="subtitle">Find the staff or job you need</div>
+              <img src={logo} className="logo" alt="logo"/>
             </NavbarBrand>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav ml-auto">
@@ -52,12 +52,22 @@ class App extends Component {
                   <NavLink tag={RRNavLink} to="/about" activeClassName="active">About Us</NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink tag={RRNavLink} to="/about" activeClassName="active">For Candidates</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={RRNavLink} to="/about" activeClassName="active">For Employers</NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink tag={RRNavLink} to="/add-job" activeClassName="active">Add a Job</NavLink>
                 </NavItem>
               </ul>
             </div>
 
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto burger">
+              <li><i className="fas fa-bars fa-fw fa-lg"></i>
+              </li>
+            </ul>
+            {/* <ul className="navbar-nav ml-auto">
               <li className="login-box">
                 <a className="login-link" href="/whatever">
                   <i className="fas fa-user fa-fw"></i> <span>profile</span>
@@ -66,9 +76,8 @@ class App extends Component {
                 <a className="login-link" href="/whatever">
                   <i className="fas fa-wallet fa-fw"></i> <span>my wallet</span>
                 </a>
-                <span className="btn btn-light btn-sm">Log Out</span>
               </li>
-            </ul>
+            </ul> */}
             </Container>
           </nav>
 

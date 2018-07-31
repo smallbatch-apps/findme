@@ -1,9 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed|Kalam');
+
 @import "variables";
 @import "colours";
-@import "test";
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-
 
 footer {
   position: absolute;
@@ -20,17 +18,73 @@ footer {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Lato', sans-serif;
+  font-family: $feature-font, sans-serif;
+}
+
+.navbar-brand img {
+  height: 70px;
 }
 
 .nav-item {
   padding: 5px 15px;
+  font-family: $feature-font, sans-serif;
+}
+
+.burger {
+  @media screen and (min-width: $break-small) {
+    display: none;
+  }
+}
+
+.bg-box {
+  padding: 80px 50px;
+  background-size: cover;
+  text-align: center;
+  color: white;
+
+  &.recruiter {
+    background-color: rgba(0, 0, 255, 0.7);
+  }
+
+  &.recruiter::after {
+    content: "";
+    background-image: url(../images/achievement-adult-business-937481.jpg);
+    background-size: cover;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+
+  &.candidate {
+    background-color: rgba(255, 0,0, 0.7);
+  }
+
+  &.candidate::after {
+    content: "";
+    background-image: url(../images/bed-bedroom-book-1125048.jpg);
+    background-size: cover;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
 }
 
 .main-content {
-  padding-top: 50px;
-}
+  padding-top: 30px;
 
+  @media screen and (max-width: $break-small) {
+    padding-top: 20px;
+  }
+}
 
 .filter-box {
   .card {
@@ -79,20 +133,20 @@ h1, h2, h3, h4, h5 {
 }
 
 .icon-box {
- background-color: $blue;
- padding: 5px 15px;
- color: white;
- border-radius: $border-radius;
- margin-right: 15px;
- float: left;
- font-size: 30px;
+  background-color: $blue;
+  padding: 5px 15px;
+  color: white;
+  border-radius: $border-radius;
+  margin-right: 15px;
+  float: left;
+  font-size: 30px;
 }
 
 .title {
   font-size: 25px;
   color: $grey-darker;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: $feature-font, sans-serif;
 }
 
 .full-width-image {
@@ -100,7 +154,32 @@ h1, h2, h3, h4, h5 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 500px;
+  border: 0px solid $grey-light;
+  border-bottom-color: $grey-lighter;
+  border-bottom-width: 5px;
+  border-top-width: 3px;
+
+  @media screen and (max-width: $break-small) {
+    height: 100px;
+
+    .content-bottom  {
+      display: none;
+    }
+  }
+
+  position: relative;
+
+  .content-bottom {
+    position: absolute;
+    bottom: 0;
+
+    .text {
+      padding: 80px 50px;
+      text-align: center;
+      color: $green-lightest;
+    }
+  }
 }
 
 .login-box {
@@ -119,14 +198,13 @@ h1, h2, h3, h4, h5 {
     top: 1px;
 
     span {
-      display: inline-block;
+      display: none;
     }
 
   }
 
   .btn {
     font-size: 10px;
-    font-family: 'Lato', sans-serif;
     margin-left: 15px;
   }
 
@@ -140,6 +218,10 @@ h1, h2, h3, h4, h5 {
 .subtitle {
   font-size: 14px;
   color: $grey-dark;
-  font-family: 'Lato', sans-serif;
+  font-family: $feature-font, sans-serif;
   font-weight : 100;
+}
+
+h3.featured {
+  font-family: 'Kalam', sans-serif;
 }

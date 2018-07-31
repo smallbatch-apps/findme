@@ -4,7 +4,6 @@
 
 footer {
   position: absolute;
-  bottom: 0;
   background-color: #3d4852;
   color: #b8c2cc;
   width: 100%;
@@ -39,6 +38,15 @@ h1, h2, h3, h4, h5 {
     .filter-box .card .list-group-item.active {
       background-color: transparent;
       color: #3d4852; }
+
+.breadcrumb {
+  background-color: transparent; }
+
+.jobs-box h3 {
+  margin-left: 20px; }
+
+.jobs-box p.no-jobs {
+  margin-left: 20px; }
 
 .jobs-box .card {
   border-color: white; }

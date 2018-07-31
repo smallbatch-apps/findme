@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
-.test {
-  background-color: blue; }
-
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed|Kalam");
 footer {
   position: absolute;
   background-color: #3d4852;
@@ -13,13 +10,56 @@ footer {
     margin-top: 50px; }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Lato', sans-serif; }
+  font-family: "Barlow Condensed", sans-serif; }
+
+.navbar-brand img {
+  height: 70px; }
 
 .nav-item {
-  padding: 5px 15px; }
+  padding: 5px 15px;
+  font-family: "Barlow Condensed", sans-serif; }
+
+@media screen and (min-width: 600px) {
+  .burger {
+    display: none; } }
+
+.bg-box {
+  padding: 80px 50px;
+  background-size: cover;
+  text-align: center;
+  color: white; }
+  .bg-box.recruiter {
+    background-color: rgba(0, 0, 255, 0.7); }
+  .bg-box.recruiter::after {
+    content: "";
+    background-image: url(../images/achievement-adult-business-937481.jpg);
+    background-size: cover;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
+  .bg-box.candidate {
+    background-color: rgba(255, 0, 0, 0.7); }
+  .bg-box.candidate::after {
+    content: "";
+    background-image: url(../images/bed-bedroom-book-1125048.jpg);
+    background-size: cover;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; }
 
 .main-content {
-  padding-top: 50px; }
+  padding-top: 30px; }
+  @media screen and (max-width: 600px) {
+    .main-content {
+      padding-top: 20px; } }
 
 .filter-box .card {
   border-radius: 0; }
@@ -64,14 +104,31 @@ h1, h2, h3, h4, h5 {
   font-size: 25px;
   color: #606f7b;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif; }
+  font-family: "Barlow Condensed", sans-serif; }
 
 .full-width-image {
   background-image: url(../images/agreement-blur-brainstorming-401682.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 600px; }
+  height: 500px;
+  border: 0px solid #dae1e7;
+  border-bottom-color: #f1f5f8;
+  border-bottom-width: 5px;
+  border-top-width: 3px;
+  position: relative; }
+  @media screen and (max-width: 600px) {
+    .full-width-image {
+      height: 100px; }
+      .full-width-image .content-bottom {
+        display: none; } }
+  .full-width-image .content-bottom {
+    position: absolute;
+    bottom: 0; }
+    .full-width-image .content-bottom .text {
+      padding: 80px 50px;
+      text-align: center;
+      color: #e3fcec; }
 
 .login-box {
   background-color: #3490dc;
@@ -87,10 +144,9 @@ h1, h2, h3, h4, h5 {
     position: relative;
     top: 1px; }
     .login-box a span {
-      display: inline-block; }
+      display: none; }
   .login-box .btn {
     font-size: 10px;
-    font-family: 'Lato', sans-serif;
     margin-left: 15px; }
   .login-box i {
     position: relative;
@@ -99,5 +155,8 @@ h1, h2, h3, h4, h5 {
 .subtitle {
   font-size: 14px;
   color: #8795a1;
-  font-family: 'Lato', sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   font-weight: 100; }
+
+h3.featured {
+  font-family: 'Kalam', sans-serif; }

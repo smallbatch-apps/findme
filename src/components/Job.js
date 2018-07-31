@@ -1,7 +1,6 @@
 import React from 'react';
 import ContractService from '../ContractService';
 import {Link} from 'react-router-dom';
-import {NavItem} from 'reactstrap';
 import { translateCategory } from '../data';
 
 const contract = new ContractService();
