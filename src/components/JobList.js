@@ -19,7 +19,7 @@ const JobList = ({jobs, filters}) => {
   const filteredJobs = filterJobs(jobs, filters);
   return <div className="w-75 jobs-box">
 
-  <h3 class="featured">Found {filteredJobs.length} jobs</h3>
+  <h3 className="featured">Found {filteredJobs.length} jobs</h3>
 
   {filteredJobs.map(job =>
       <div className="card w-100 mb-3" key={job.id}>

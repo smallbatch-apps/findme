@@ -1,4 +1,4 @@
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.4.24;
 
 contract FindMe {
 
@@ -6,52 +6,41 @@ contract FindMe {
 
     uint256 public fee;
 
-    struct Position {
-        bytes32 id;
-        uint256 minRate;
-        uint256 maxRate;
-        uint256 expires;
-        uint256 added;
-        uint256 applicationFee;
-        uint256 feesTaken;
-        address owner;
-    }
+    mapping(address => bytes32[]) ownerPositions;
+    mapping(address => bytes32[]) userApplications;
+    mapping(bytes32 => uint256) bounties;
+    mapping(bytes32 => address) positionOwner;
+    mapping(bytes32 => address[]) applicants;
 
-    Position[] public positions;
-    mapping(uint256 => address[]) applicants;
+    event PositionAdded(
+        address indexed _from,
+        bytes32 indexed _jobId
+    );
+
+    event PositionApplied(
+        address indexed _applicant,
+        address indexed _owner
+    );
 
     constructor() public {
         owner = msg.sender;
         fee = 100 finney;
-
-        addPosition('asdf', 123, 456, 78);
     }
 
-    function getTest() public pure returns (uint256) {
-        return 123;
+    function getUserApplications() public view returns (bytes32[]) {
+        return userApplications[msg.sender];
     }
 
-    function getPositions() public view returns (Position[]) {
-        return positions;
+    function makeApplication(bytes32 _jobId) public payable {
+        userApplications[msg.sender].push(_jobId);
+        applicants[_jobId].push(msg.sender);
+
+        emit PositionApplied(msg.sender, positionOwner[_jobId]);
     }
 
-    function getPosition(uint256 _index) public view returns (Position) {
-        return positions[_index];
+    function addPosition(bytes32 _jobId) public payable {
+        ownerPositions[msg.sender].push(_jobId);
+        bounties[_jobId] = 150;
+        emit PositionAdded(msg.sender, _jobId);
     }
-
-    function addPosition(bytes32 _id, uint256 minRate, uint256 maxRate, uint256 _fee) public payable {
-
-        uint256 expires = now + 30 days;
-        positions.push(Position(_id, minRate, maxRate, now, expires, _fee, 0, msg.sender));
-    }
-
-    function apply(uint256 index) public payable {
-        require(positions[index].expires < now, "Position has expired");
-        require(msg.value > positions[index].applicationFee, "Fee not enough");
-        positions[index].feesTaken += msg.value;
-
-        applicants[index].push(msg.sender);
-    }
-
-
 }
