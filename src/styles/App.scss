@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5 {
 
   &.recruiter::after {
     content: "";
-    background-image: url(../images/achievement-adult-business-937481.jpg);
+    background-image: url(../images/employer-bg.jpg);
     background-size: cover;
     opacity: 1;
     top: 0;
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
 
   &.candidate::after {
     content: "";
-    background-image: url(../images/bed-bedroom-book-1125048.jpg);
+    background-image: url(../images/candidate-bg.jpg);
     background-size: cover;
     opacity: 1;
     top: 0;
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .full-width-image {
-  background-image: url(../images/agreement-blur-brainstorming-401682.jpg);
+  background-image: url(../images/hero-image.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -1,9 +1,9 @@
 import React from 'react';
-import ContractService from '../ContractService';
+import PersistenceService from '../PersistenceService';
 import {Link} from 'react-router-dom';
 import { translateCategory } from '../data';
 
-const contract = new ContractService();
+const contract = new PersistenceService();
 
 const Job = ({match}) => {
   const job = contract.getJob(match.params.id);
