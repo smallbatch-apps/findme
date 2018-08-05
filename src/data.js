@@ -14,7 +14,7 @@ export const data = [
     employer: "George's Paragon Seafood Restaurant - Brisbane",
     summary: "We pride our reputation on the highest quality of food and service and believe the ingredient to our success over the last 25 years has been our staff. We are currently seeking professional individuals to join our existing vibrant team of kitchen staff.",
     category: "food-prep",
-    type: "full-type",
+    type: "full-time",
     state: "QLD"
   },
   {
@@ -76,7 +76,7 @@ export const data = [
     title: "Fundraising Promoter (NSW)",
     employer: "World Vision Australia",
     summary: "Be a change maker. At World Vision Australia you have a unique chance to use your talent & expertise in a role that makes a difference in the lives of children affected by poverty. Working with a motivated and passionate team of like-minded individuals.",
-    category: "sales",
+    category: "retail",
     type: "casual",
     state: "NSW"
   },
@@ -332,4 +332,8 @@ export const translateType = (search) => {
 
 export const translateLocation = (search) => {
   return filters.find(({type}) => type === 'state').entries.find(({value}) => value === search).label;
+}
+
+export const entriesFor = (filterType) => {
+  return filters.find(({type}) => type === filterType).entries;
 }

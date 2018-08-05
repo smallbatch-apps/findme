@@ -5,12 +5,14 @@ import {translateCategory, translateLocation, translateType } from '../data'
 const filterJobs = (jobs, filters) => {
 
   return jobs.map(job => {
+
     if(filters.every(filter => {
       let allowed = filter.entries.filter(({active}) => active).map(({value}) => value);
       return allowed.includes(job[filter.type]);
       })) {
       return job;
     }
+
     return false;
   }).filter(job => job);
 }

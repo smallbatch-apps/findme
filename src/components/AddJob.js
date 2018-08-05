@@ -1,61 +1,105 @@
 import React, {Component} from 'react';
+import { entriesFor } from '../data';
+
+
 
 class AddJob extends Component {
 
   constructor(props){
     super(props);
 
-    const careerLevels = [
-      {value: 'intern', label: 'Intern'},
-      {value: 'junior', label: 'Junior or Beginner'},
-      {value: 'intermediate', label: 'Intermediate: some experience'},
-      {value: 'senior', label: 'Senior'}
-    ];
+    let categories = entriesFor('category');
+    let states = entriesFor('state');
+    let types = entriesFor('type');
 
-    const types = [
-      {value: 'full-time', label: 'Full Time'},
-      {value: 'part-time', label: 'Part Time'},
-      {value: 'casual', label: 'Casual'},
-      {value: 'contract', label: 'Contract Role'},
-    ];
+    this.state = { types, states, categories };
 
-    this.state = {careerLevels, types};
+  }
 
+  getAlertStatus(){
+
+    if (this.props.confirmed) {
+      return (<div className="alert alert-success" role="alert">
+        <i className="fas fa-check-double"></i> Your job has been verified on the blockchain and added to our listings
+      </div>);
+    }
+
+    if (this.props.submitted) {
+      return (<div className="alert alert-primary" role="alert">
+        <i className="fas fa-check"></i> Your job has been received and is being verified on the blockchain. This may take some time.
+      </div>);
+    }
+
+    return '';
 
   }
 
   render() {
+
     return (
-      <div className="container main-content">
-        <h2>Post new job</h2>
+      <div className="card mb-3">
+      <div className="card-header"><h4>Post new job</h4></div>
+        <div className="card-body">
 
-        <form className="create-job">
 
-          <div className="form-group">
-            <label htmlFor="title">Job Title</label>
-            <input type="text" name="title" className="form-control" placeholder="Job Title" onChange={this.handleFieldChange} />
-          </div>
+          <form className="create-job">
 
-          <div className="form-group">
-            <label htmlFor="title">Description</label>
-            <textarea name="description" className="form-control" onChange={this.handleFieldChange} />
-          </div>
+            {this.getAlertStatus()}
 
-          <div className="row">
-            <div className="col">
-              <div className="form-group">
-                <label htmlFor="career-level">Career Level</label>
-                <input type="text" className="form-control" name="career-level" placeholder="" />
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="form-group">
+                  <label htmlFor="type">Role Type</label>
+                  <select value={this.state.type} name="type" className="form-control form-control-sm" onChange={this.handleFieldChange}>
+                  <option>Select a type</option>
+                  {this.state.types.map(({value, label}, index) =>
+                    <option key={index} value={value}>{label}</option>
+                  )}
+                  </select>
+
+                </div>
+              </div>
+              <div className="col-sm-4">
+                <div className="form-group">
+                  <label htmlFor="state">Location</label>
+                  <select value={this.state.state} name="state" className="form-control form-control-sm" onChange={this.handleFieldChange}>
+                  <option>Select a location</option>
+                  {this.state.states.map(({value, label}, index) =>
+                    <option key={index} value={value}>{label}</option>
+                  )}
+                  </select>
+                </div>
+              </div>
+              <div className="col-sm-4">
+                <div className="form-group">
+                  <label htmlFor="industry">Industry</label>
+                  <select value={this.state.category} name="category" className="form-control form-control-sm" onChange={this.handleFieldChange}>
+                  <option>Select an industry</option>
+                  {this.state.categories.map(({value, label}, index) =>
+                    <option key={index} value={value}>{label}</option>
+                  )}
+                  </select>
+                </div>
               </div>
             </div>
-            <div className="col">
-              <div className="form-group">
-                <label htmlFor="formGroupExampleInput">Example label</label>
-                <input type="text" className="form-control" placeholder="First name" />
-              </div>
+
+            <div className="form-group">
+              <label htmlFor="title">Job Title</label>
+              <input type="text" name="title" className="form-control form-control-sm" onChange={this.handleFieldChange} />
             </div>
-          </div>
-        </form>
+
+            <div className="form-group">
+              <label htmlFor="summary">Description</label>
+              <textarea name="summary" className="form-control form-control-sm" onChange={this.handleFieldChange} />
+            </div>
+
+          </form>
+        </div>
+        <div className="card-footer">
+          <div className="btn btn-primary " onClick={this.props.addJobFormAction.bind(this.props.parentContext, Object.assign({}, this.state))}>
+              Add your job
+            </div>
+        </div>
       </div>
     )
   }

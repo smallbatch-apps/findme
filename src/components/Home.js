@@ -1,5 +1,6 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap'; 
+import {Link} from 'react-router-dom';
+import {Container, Row, Col} from 'reactstrap';
 
 const Home = () => {
   return (
@@ -8,13 +9,15 @@ const Home = () => {
         <Container className="content-bottom">
           <Row>
             <Col className="text" light="true">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod iusto laboriosam repellat, alias nihil mollitia velit consectetur vero voluptas accusamus a facilis! Pariatur iusto quasi veniam odio et sit?</p>
-            
-            <a className="btn btn-outline-light" href="signup">Signup Now</a>
+            <h4>Land a job, get an instant paycheck</h4>
+
+            <p>findME is the smartest way to start your career in the right direction.</p>
+
+            <Link className="btn btn-outline-light" to="/candidates">Get Started Now</Link>
 
             </Col>
             <Col>
-              
+
             </Col>
           </Row>
         </Container>
@@ -23,7 +26,10 @@ const Home = () => {
       <Container className="main-content mb-5">
         <h2>About findME</h2>
 
-        <p>FindME is a revolutionary peer to peer recruitment platform created by one of Australia’s first Blockchain companies - Intellichain. FindME leverages the Ethereum network to deliver a decentralized application providing a safe a secure system for holding users profiles and personal information.</p>
+        <p>findME is a revolutionary peer to peer recruitment platform created by one of Australia’s first Blockchain companies - Intellichain. findME leverages the Ethereum network to deliver a decentralized application providing a safe a secure system for holding users profiles and personal information.</p>
+
+        <p>FindMe will be become the gold standard in recruitment, its revolutionary patented Ghost Transaction Protocol means company advertising budgets are not affected by varying price of the underlying cryptocurrency asset.</p>
+
       </Container>
       <Container fluid className="mb-5">
         <Row>
@@ -32,25 +38,18 @@ const Home = () => {
 
             <p>The findME platform allows recruiters to find and verify potential candidates, allowing you to be certain of providing the most suitable candidates.</p>
 
-            <a className="btn btn-outline-light" href="signup">Join as a recruiter</a>
+            <Link className="btn btn-outline-light" to="/employers">Join as a recruiter</Link>
           </Col>
           <Col className="bg-box candidate">
             <h2>For Candidates</h2>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam est soluta maiores velit veniam, sint quae id ratione nisi suscipit libero repudiandae, laboriosam quia facere illum nobis in! Cum, incidunt?</p>
-            <a className="btn btn-outline-light" href="signup">Join as a candidate</a>
+            <p>findME is the smartest way to start your career in the right direction. With proven skills and verified qualifications you can stand out from the pack.</p>
+
+            <Link className="btn btn-outline-light" to="/jobs">Start Looking</Link>
           </Col>
         </Row>
       </Container>
 
-      <Container className="mb-5">
-        
-        <h2>Consectetur adipisicing elit</h2>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quod iusto laboriosam repellat, alias nihil mollitia velit consectetur vero voluptas accusamus a facilis! Pariatur iusto quasi veniam odio et sit?</p>
-      </Container>
-
-        
     </div>
   )
 }

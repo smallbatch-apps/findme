@@ -31,6 +31,14 @@ contract FindMe {
         return userApplications[msg.sender];
     }
 
+    function getOwnerPositions() public view returns (bytes32[]) {
+        return ownerPositions[msg.sender];
+    }
+
+    function getApplicants(bytes32 _jobId) public view returns (address[]) {
+        return applicants[_jobId];
+    }
+
     function makeApplication(bytes32 _jobId) public payable {
         userApplications[msg.sender].push(_jobId);
         applicants[_jobId].push(msg.sender);
